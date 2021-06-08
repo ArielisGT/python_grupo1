@@ -1,11 +1,37 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Solicitar vehículo{% endblock %}
+{% block title %}Home Revo{% endblock %}
 
 {% block content %}
-
-<h1>revo</h1>
-
-<a href="{% url 'rent_request_form' %}">Alquilar coche</a>
-
+<main class="container-fluid">
+    <section class="wrapper-one">
+        <h3>Let’s move together</h3>
+        <h5>We improved our variety of vehicles so you can decide which solution is better.
+            Search for the right choice and in just one click we’ll do magic.</h5>
+    </section>
+    <section class="container wrapper-two">
+        <article class="art-wrapper">
+            <img class="low" src="{% static 'imgs/audi_etron_gt.png' %}" alt="Audi eTron GT">
+            <div class="text">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                squid.
+            </div>
+            <a class="btn sel-car" href="{% url 'rent_request_form' %}">SELECT E-CAR</a>
+        </article>
+        <article class="art-wrapper">
+            <img class="low" src="{% static 'imgs/zero_dsr.png' %}" alt="Zero DSR">
+            <div class="text">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                squid.
+            </div>
+            <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/moto-list.html">SELECT E-MOTORBIKE</a>
+        </article>
+        <article class="art-wrapper">
+            <img class="low" src="{% static 'imgs/e_scooter_2.png' %}" alt="Scooters Revo">
+            <div class="text">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                squid.
+            </div>
+            <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/scooter-list.html">SELECT E-SCOOTER</a>
+        </article>
+    </section>
+</main>
 {% endblock %}

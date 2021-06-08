@@ -20,7 +20,7 @@ def admin_vehicle_list(request):
     context = {
         'vehicles': Vehicle.vehicles.all()
     }
-    return render(request, 'admin_vehicle_list.html', context)
+    return render(request, 'admin/admin_vehicle_list.html', context)
 
 
 # admin: ver datos de vehículo
@@ -36,7 +36,7 @@ def admin_view_vehicle(request, vehicle_id):
     context = {
         'vehicle': vehicle
     }
-    return render(request, 'admin_vehicle_view.html', context)
+    return render(request, 'admin/admin_vehicle_view.html', context)
 
 
 # admin: formulario para crear vehículo
@@ -51,7 +51,7 @@ def admin_create_vehicle_form(request):
         'heading': 'Nuevo vehículo',
         'submitLabel': 'Crear vehículo'
     }
-    return render(request, 'admin_vehicle_form.html', context)
+    return render(request, 'admin/admin_vehicle_form.html', context)
 
 
 # admin: formulario para editar vehículo
@@ -70,7 +70,7 @@ def admin_edit_vehicle_form(request, vehicle_id):
         'submitLabel': 'Guardar vehículo'
     }
 
-    return render(request, 'admin_vehicle_form.html', context)
+    return render(request, 'admin/admin_vehicle_form.html', context)
 
 
 # admin: guardar vehículo
@@ -119,7 +119,7 @@ def admin_save_vehicle(request):
 
         vehicle.save()
 
-    return redirect('admin_vehicle_list')
+    return redirect('admin/admin_vehicle_list')
 
 
 # admin: eliminar vehículo
@@ -136,7 +136,7 @@ def admin_delete_vehicle(request, vehicle_id):
 
     Vehicle.vehicles.get(id=vehicle_id).delete()
 
-    return redirect('admin_vehicle_list')
+    return redirect('admin/admin_vehicle_list')
 
 
 # cliente
@@ -150,7 +150,7 @@ def client_login_form(request):
 <p>Ha introducido un nombre de usuario y/o contraseña no válidos.</p>
 '''
 
-    return render(request, 'client_login_form.html', context)
+    return render(request, 'client/client_login_form.html', context)
 
 
 # cliente
@@ -173,7 +173,7 @@ def client_login(request):
 
     request.session['client_id'] = client.id
 
-    return redirect('rent_request_form')
+    return redirect('home')
 
 
 # cliente: formulario de registro
@@ -234,7 +234,7 @@ def home(request):
 # @login_required
 def rent_request_form(request):
     context = {}
-    return render(request, 'rent_request_form.html', context)
+    return render(request, 'rent/rent_request_form.html', context)
 
 
 # alquiler: seleccionar vehículo
@@ -251,7 +251,7 @@ def rent_select_vehicle(request):
         'rent_end': rent_end
     }
 
-    return render(request, 'rent_select_vehicle.html', context)
+    return render(request, 'rent/rent_select_vehicle.html', context)
 
 
 # alquiler: reservar vehículo seleccionado
@@ -265,7 +265,7 @@ def rent_reserve_vehicle_form(request, vehicle_id, rent_begin, rent_end):
         'rent_end': rent_end,
         'vehicle': vehicle
     }
-    return render(request, 'rent_reserve_vehicle.html', context)
+    return render(request, 'rent/rent_reserve_vehicle.html', context)
 
 
 # alquiler: confirmar alquiler

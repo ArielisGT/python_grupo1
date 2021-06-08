@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Cars List REVO{% endblock %}
+
+{% block content %}
+<main class="container-fluid">
+  <section class="wrapper-one">
+    <h5>Please, select a car you are interested in:</h5>
+<!--
+    <form class="container horizon" action="{% url 'rent_select_vehicle' %}" method="GET">
+        <div class="col align-self-start">
+          <label for="rentBegin" class="form-label d-flex justify-content-start ">Starting:</label>
+          <input type="datetime-local" id="rentBegin" class="form-control bg-secondary text-white" name="begin" autofocus>
+        </div>
+        <div class="col align-self-start">
+          <label for="rentEnd" class="form-label d-flex justify-content-start">Ending:</label>
+          <input type="datetime-local" id="rentEnd" class="form-control bg-secondary text-white" name="end">
+        </div>
+        <input class="btn cars" type="submit" value="SHOW AVAILABLE CARS">
+    </form>
+-->
+  </section>
+<!--
+  <section class="wrapper-two">
+    <article class="car-types">
+      <h5>Electric Vehicles</h5>
+      <p>EVs (also known as plug-in electric vehicles) derive all or part of
+        their power from electricity supplied by the electric grid. They include AEVs and PHEVs.</p>
+    </article>
+    <article class="car-types">
+      <h5>All-electric vehicles</h5>
+      <p>AEVs (all-electric vehicles) are powered by one or more electric motors.
+        They receive electricity by plugging into the grid and store it in batteries.
+        They consume no petroleum-based fuel and produce no tailpipe emissions.
+        AEVs include Battery Electric Vehicles (BEVs) and Fuel Cell Electric Vehicles (FCEVs).</p>
+    </article>
+    <article class="car-types">
+      <h5>Plug-in hybrid electric vehicles</h5>
+      <p>PHEVs (plug-in hybrid electric vehicles) use batteries to power an electric motor,
+        plug into the electric grid to charge, and use a petroleum-based or alternative fuel
+         to power the internal combustion engine. Some types of PHEVs are also called extended-range
+         electric vehicles (EREVs).</p>
+    </article>
+  </section>
+-->
+  <section class="container wrapper-three">
+    <article class="art-wrapper">
+      <img class="low" src="{% static 'imgs/e_cars/aygo_3.png' %}" alt="Toyota Aygo">
+      <div class="text">TOYOTA Aygo</div>
+      <div class="pills">
+        <span class="badge rounded-pill bg-light text-dark ">short trips</span>
+        <span class="badge rounded-pill bg-secondary ">quick charge</span>
+      </div>
+      <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+    </article>
+    <article class="art-wrapper">
+      <img class="low" src="{% static 'imgs/e_cars/eniro_1.png' %}" alt="KIA eNiro">
+      <div class="text">KIA eNiro</div>
+      <div class="pills">
+        <span class="badge rounded-pill bg-light text-dark ">+ autonomy</span>
+        <span class="badge rounded-pill bg-secondary ">quick charge</span>
+      </div>
+      <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/car-rent.html">SELECT</a>
+    </article>
+            <article class="art-wrapper">
+      <img class="low" src="{% static 'imgs/e_cars/traveller_1.png' %}" alt="PEUGEOT eTraveller">
+      <div class="text">PEUGEOT eTraveller</div>
+      <div class="pills">
+        <span class="badge rounded-pill bg-light text-dark ">+ autonomy</span>
+        <span class="badge rounded-pill bg-dark">+ power</span>
+        <span class="badge rounded-pill bg-secondary ">quick charge</span>
+      </div>
+      <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+    </article>
+    <article class="art-wrapper">
+      <img class="low" src="{% static 'imgs/e_cars/e208_1.png' %}" alt="PEUGEOT e208">
+      <div class="text">PEUGEOT e208</div>
+      <div class="pills">
+        <span class="badge rounded-pill bg-secondary">+ autonomy</span>
+        <span class="badge rounded-pill bg-light text-dark ">short trips</span>
+      </div>
+      <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+    </article>
+    <article class="art-wrapper">
+      <img class="low" src="{% static 'imgs/e_cars/q4_1.png' %}" alt="AUDI Q4 etron">
+      <div class="text">AUDI Q4 etron</div>
+      <div class="pills">
+        <span class="badge rounded-pill bg-dark ">+ power</span>
+        <span class="badge rounded-pill bg-secondary">+ autonomy</span>
+      </div>
+      <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+    </article>
+    <article class="art-wrapper">
+      <img class="low" src="{% static 'imgs/e_cars/eqa_3.png' %}" alt="MERCEDES BENZ EQA">
+      <div class="text">MERCEDES BENZ EQA</div>
+      <div class="pills">
+        <span class="badge rounded-pill bg-light text-dark ">+ autonomy</span>
+        <span class="badge rounded-pill bg-dark ">+ power</span>
+        <span class="badge rounded-pill bg-secondary">quick charge</span>
+      </div>
+      <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+    </article>
+  </section>
+</main>
+<!--# codigo de Alexander
+<h1>Solicitar vehículo</h1>
+<form action="{% url 'rent_select_vehicle' %}" method="GET">
+    <p>Indique intervalo de tiempos del alquiler</p>
+
+    <label for="rentBegin">Desde</label>
+    <input id="rentBegin" name="begin" type="datetime-local">
+
+    <label for="rentEnd">Hasta</label>
+    <input id="rentEnd" name="end" type="datetime-local">
+
+    <button type="submit">Ver vehículos disponibles</button>
+</form>
+-->
+{% endblock %}

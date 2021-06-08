@@ -1,0 +1,84 @@
+/* -------------------PRE-CODE----------------
+
+/* para que tome el width desde el borde de la caja.*/
+* {
+ box-sizing: border-box;
+}
+body {
+  font-size: 100%;
+  background-color: black;
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+picture {
+  display: block;
+}
+/* -------------------END PRE-CODE----------------*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70vw;
+  min-height: 80vh;
+}
+.logo {
+  min-width: 20vw;
+  max-width: 25vh;
+}
+
+.links {
+  border: 2px solid white;
+  padding: 0.25rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+.btn-send {
+  border: none;
+  background-color: rgb(137, 5, 86);
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+}
+.vertical {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  text-align: center;
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin-top: 2rem;
+  color: white;
+
+}
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 40vw;
+  min-height: 60vh;
+  padding: 2rem;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 3rem;
+  color: white;
+}
