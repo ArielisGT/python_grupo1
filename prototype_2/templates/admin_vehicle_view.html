@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title %}Datos vehículo #{{ vehicle.id }}{% endblock %}
+
+{% block content %}
+
+<h1>Vehículo #{{ vehicle.id }}</h1>
+<dl>
+    <dt>Modelo</dt>
+    <dd>{{ vehicle.model }}</dd>
+
+    <dt>Matrícula</dt>
+    <dd>{{ vehicle.number }}</dd>
+</dl>
+
+<ul>
+    <li><a href="{% url 'admin_vehicle_list' %}">Volver a la lista</a></li>
+    <li><a href="{% url 'admin_edit_vehicle_form' vehicle.pk %}">Editar vehículo</a></li>
+    <li><a href="{% url 'admin_delete_vehicle' vehicle.pk %}">Borrar vehículo</a></li>
+</ul>
+
+{% endblock %}

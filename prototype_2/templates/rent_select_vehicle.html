@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Seleccionar vehículo{% endblock %}
+
+{% block content %}
+
+<h1>Seleccionar vehículo</h1>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Número</th>
+        <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for vehicle in vehicles %}
+    <tr>
+        <th scope="row">{{ vehicle.id }}</th>
+        <td>{{ vehicle.model }}</td>
+        <td>{{ vehicle.number }}</td>
+        <td>
+            <a href="{% url 'rent_reserve_vehicle_form' vehicle.pk rent_begin rent_end %}">Reservar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

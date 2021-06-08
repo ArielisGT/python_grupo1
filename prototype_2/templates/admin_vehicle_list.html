@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Lista de vehículos{% endblock %}
+
+{% block content %}
+
+<h1>Lista de vehículos</h1>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Número</th>
+        <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for vehicle in vehicles %}
+    <tr>
+        <th scope="row">{{ vehicle.id }}</th>
+        <td>{{ vehicle.model }}</td>
+        <td>{{ vehicle.number }}</td>
+        <td>
+            <a href="{% url 'admin_view_vehicle' vehicle.pk %}">Ver</a>
+            <a href="{% url 'admin_edit_vehicle_form' vehicle.pk %}">Editar</a>
+            <a href="{% url 'admin_delete_vehicle' vehicle.pk %}">Borrar</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'admin_create_vehicle_form' %}">Agregar vehículo</a>
+
+{% endblock %}

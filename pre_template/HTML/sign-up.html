@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/CSS/normalize.css" />
+    <link rel="stylesheet" href="/CSS/sign-up.css" />
+    <title>Sign up REVO</title>
+  </head>
+  <body>
+    <main class="container wrapper">
+      <section>
+        <h1>
+          <img class="logo" src="/static/logo_high.png" alt="logo revo" />
+        </h1>
+        <h2>Fill in the form to create a registered user account.</h2>
+        <form class="container middle" action="/HTML/login.html" method="POST">
+           <div class="flow">
+            <div class="col space">
+              <label for="name" class="form-label">Name *</label>
+              <input type="text" class="form-control bg-transparent border border-dark border-2" id="name">
+            </div>
+            <div class="col space">
+              <label for="surname" class="form-label">Surname *</label>
+              <input type="text" class="form-control bg-transparent border border-dark border-2" id="surname">
+            </div>
+           </div>
+           <div class="flow">
+            <div class="col space">
+              <label for="email" class="form-label">Email *</label>
+              <input type="email" class="form-control bg-transparent border border-dark border-2" id="email">
+            </div>
+            <div class="col space">
+              <label for="city" class="form-label">City</label>
+              <input type="text" class="form-control bg-transparent border border-dark border-2" id="city">
+            </div>
+           </div>
+           <div class="flow">
+            <div class="col space">
+              <label for="password" class="form-label">Password *</label>
+              <input type="password" class="form-control bg-transparent border border-dark border-2" id="password">
+            </div>
+              <div class="col space">
+              <label for="password2" class="form-label">Repeat password *</label>
+              <input type="password" class="form-control bg-transparent border border-dark border-2" id="password2">
+            </div>
+           </div> 
+          <button type="submit" class="btn-send">REGISTER</button>
+        </form>
+      </section>
+    </main> 
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

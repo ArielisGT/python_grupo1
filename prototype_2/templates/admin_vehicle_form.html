@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block title %}Formulario de vehículo{% endblock %}
+
+{% block content %}
+
+<h1>{{ heading }}</h1>
+<form action="{% url 'admin_save_vehicle' %}" method="POST">
+    {% csrf_token %}
+
+    {% if vehicle %}
+    <input name="id" type="hidden" value="{{ vehicle.id }}">
+    {% endif %}
+
+    <label for="vehicleModel">Modelo</label>
+    <input id="vehicleModel" name="model" type="text" value="{{ vehicle.model }}">
+
+    <label for="vehicleNumber">Matrícula</label>
+    <input id="vehicleNumber" name="number" type="text" value="{{ vehicle.number }}">
+
+    <button type="submit">{{ submitLabel }}</button>
+</form>
+
+<a href="{% url 'admin_vehicle_list' %}">Cancelar</a>
+
+{% endblock %}

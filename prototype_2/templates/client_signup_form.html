@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block title %}Login{% endblock %}
+
+{% block content %}
+
+<h1>Registrarse</h1>
+{{ message | safe }}
+<form action="{% url 'client_signup' %}" method="POST">
+    {% csrf_token %}
+
+    <label for="clientUsername">Nombre de usuario</label>
+    <input id="clientUsername" name="username" type="text">
+
+    <label for="clientPassword">Contraseña</label>
+    <input id="clientPassword" name="password" type="text">
+
+    <label for="clientPassword2">Repetir contraseña</label>
+    <input id="clientPassword2" name="password2" type="text">
+
+    <label for="clientEmail">Dirección email</label>
+    <input id="clientEmail" name="email" type="text">
+
+    <label for="clientAddress">Dirección</label>
+    <input id="clientAddress" name="address" type="text">
+
+    <button type="submit">Entrar</button>
+</form>
+
+{% endblock %}

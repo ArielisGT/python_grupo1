@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/CSS/normalize.css" />
+    <link rel="stylesheet" href="/CSS/cars-list.css" />
+    <script src="https://kit.fontawesome.com/37872d8ed8.js" crossorigin="anonymous"></script>
+    <title>Cars List REVO</title>
+  </head>
+  <body>
+    <header class="container-fluid">
+      <h1><img class="logo" src="/static/logo_white@4x.png" alt="logo revo" /></h1>
+      <nav class="navbar navbar-expand-xl navbar-dark bg-transparent p-0 m-0">
+          <div class="collapse navbar-collapse d-flex flex-row" id="navbarNavDropdown">
+            <ul class="navbar-nav first">
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="navbar-toggler-icon white"></span>
+                </a>
+                <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item white" href="#">Renting history</a></li>
+                  <li><a class="dropdown-item white" href="#">How it works</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown pe-5">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  User
+                </a>
+                <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item white" href="#">Account settings</a></li>
+                  <li><a class="dropdown-item white" href="#">Close session</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </header>
+    <main class="container-fluid">
+      <section class="wrapper-one">
+        <h6>Please, select date and time you are interested in to reserve the vehicle:</h6>
+        <form class="container horizon" action="submit" method="GET">
+            <div class="col align-self-start">
+              <label for="start_date" class="form-label d-flex justify-content-start ">Starting:</label>
+              <input type="datetime-local" class="form-control bg-secondary text-white" name="start_date" autofocus>
+            </div>
+            <div class="col align-self-start">
+              <label for="end_date" class="form-label d-flex justify-content-start">Ending:</label>
+              <input type="datetime-local" class="form-control bg-secondary text-white" name="end_date">
+            </div>
+            <input class="btn cars" type="submit" value="SHOW AVAILABLE CARS">
+        </form>
+      </section>
+      <section class="wrapper-two">
+        <article class="car-types">
+          <h5>Electric Vehicles</h5>
+          <p>EVs (also known as plug-in electric vehicles) derive all or part of 
+            their power from electricity supplied by the electric grid. They include AEVs and PHEVs.</p>
+        </article>
+        <article class="car-types">
+          <h5>All-electric vehicles</h5>
+          <p>AEVs (all-electric vehicles) are powered by one or more electric motors. 
+            They receive electricity by plugging into the grid and store it in batteries.
+            They consume no petroleum-based fuel and produce no tailpipe emissions. 
+            AEVs include Battery Electric Vehicles (BEVs) and Fuel Cell Electric Vehicles (FCEVs).</p>
+        </article>
+        <article class="car-types">
+          <h5>Plug-in hybrid electric vehicles</h5>
+          <p>PHEVs (plug-in hybrid electric vehicles) use batteries to power an electric motor, 
+            plug into the electric grid to charge, and use a petroleum-based or alternative fuel
+             to power the internal combustion engine. Some types of PHEVs are also called extended-range
+             electric vehicles (EREVs).</p>
+        </article>
+      </section>
+      <section class="container wrapper-three">
+        <article class="art-wrapper">
+          <img  class="low" src="/static/e_cars/aygo_3.png" alt="">
+          <div class="text">TOYOTA Aygo</div>
+          <div class="pills">
+            <span class="badge rounded-pill bg-light text-dark ">short trips</span>
+            <span class="badge rounded-pill bg-secondary ">quick charge</span>
+          </div>
+          <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+        </article>
+        <article class="art-wrapper">
+          <img  class="low" src="/static/e_cars/eniro_1.png" alt="">
+          <div class="text">KIA eNiro</div>
+          <div class="pills">
+            <span class="badge rounded-pill bg-light text-dark ">+ autonomy</span>
+            <span class="badge rounded-pill bg-secondary ">quick charge</span>
+          </div>
+          <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/car-rent.html">SELECT</a>
+        </article>
+                <article class="art-wrapper">
+          <img  class="low" src="/static/e_cars/traveller_1.png" alt="">
+          <div class="text">PEUGEOT eTraveller</div>
+          <div class="pills">
+            <span class="badge rounded-pill bg-light text-dark ">+ autonomy</span>
+            <span class="badge rounded-pill bg-dark">+ power</span>
+            <span class="badge rounded-pill bg-secondary ">quick charge</span>
+          </div>
+          <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+        </article>
+        <article class="art-wrapper">
+          <img  class="low" src="/static/e_cars/e208_1.png" alt="">
+          <div class="text">PEUGEOT e208</div>
+          <div class="pills">
+            <span class="badge rounded-pill bg-secondary">+ autonomy</span>
+            <span class="badge rounded-pill bg-light text-dark ">short trips</span>
+          </div>
+          <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+        </article>
+        <article class="art-wrapper">
+          <img  class="low" src="/static/e_cars/q4_1.png" alt="">
+          <div class="text">AUDI Q4 etron</div>
+          <div class="pills">
+            <span class="badge rounded-pill bg-dark ">+ power</span>
+            <span class="badge rounded-pill bg-secondary">+ autonomy</span>
+          </div>
+          <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+        </article>
+        <article class="art-wrapper">
+          <img  class="low" src="/static/e_cars/eqa_3.png" alt="">
+          <div class="text">MERCEDES BENZ EQA</div>
+          <div class="pills">
+            <span class="badge rounded-pill bg-light text-dark ">+ autonomy</span>
+            <span class="badge rounded-pill bg-dark ">+ power</span>
+            <span class="badge rounded-pill bg-secondary">quick charge</span>
+          </div>
+          <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/cars-list.html">SELECT</a>
+        </article>
+      </section>
+    </main>
+    <footer class="container-fluid">
+      <div class="copy">
+        <p>© 2021 Revo S.L</p>
+      </div>
+      <div>          
+        <form class="form-foo">
+            <div>
+              <label for="suscribe" class="form-label">Receive special bonus</label>
+              <input type="text" class="form-control bg-transparent border border-dark border-2" id="suscribe" placeholder="Type your email">
+            </div>
+            <button type="submit" class="btn send">SEND</button>
+          </form>
+      </div>
+      <div class="social">
+        <p>Stay connected</p>
+        <div class="icons">
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg p-2"></i></a>
+          <a href="https://twitter.com"><i class="fab fa-twitter fa-lg p-2"></i></a>
+          <a href="https://es-es.facebook.com/"><i class="fab fa-facebook-square fa-lg p-2"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg p-2"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

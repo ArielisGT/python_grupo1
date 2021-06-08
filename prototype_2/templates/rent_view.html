@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Datos vehículo #{{ vehicle.id }}{% endblock %}
+
+{% block content %}
+
+<h1>Datos de alquiler</h1>
+
+<h2>Vehículo</h2>
+<dl>
+    <dt>Modelo</dt>
+    <dd>{{ rent.vehicle.model }}</dd>
+
+    <dt>Matrícula</dt>
+    <dd>{{ rent.vehicle.number }}</dd>
+</dl>
+
+<h2>Alquiler</h2>
+<dl>
+    <dt>Desde</dt>
+    <dd>{{ rent.time_begin }}</dd>
+
+    <dt>Hasta</dt>
+    <dd>{{ rent.time_end }}</dd>
+
+    <dt>Cuenta de pago</dt>
+    <dd>{{ rent.pay_account }}</dd>
+</dl>
+
+<ul>
+    <li><a href="{% url 'client_rent_list' %}">Volver a la lista de alquileres</a></li>
+    <li><a href="{% url 'rent_cancel' rent.pk %}">Cancelar alquiler</a></li>
+</ul>
+
+{% endblock %}

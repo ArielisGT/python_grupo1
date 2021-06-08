@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title %}Seleccionar vehículo{% endblock %}
+
+{% block content %}
+
+<h1>Lista de alquileres</h1>
+<table>
+    <thead>
+    <tr>
+        <th scope="col">Desde</th>
+        <th scope="col">Hasta</th>
+        <th scope="col">Vehículo</th>
+        <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    {% for rent in rents %}
+    <tr>
+        <!-- {{ rent.id }} -->
+        <td>{{ rent.time_begin }}</td>
+        <td>{{ rent.time_end }}</td>
+        <td>{{ rent.vehicle.model }}</td>
+        <td>
+            <a href="{% url 'rent_view' rent.pk %}">Ver ficha</a>
+            <a href="{% url 'rent_cancel' rent.pk %}">Cancelar alquiler</a>
+        </td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<a href="{% url 'rent_request_form' %}">Nuevo alquiler</a>
+
+{% endblock %}

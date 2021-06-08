@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/CSS/normalize.css" />
+    <link rel="stylesheet" href="/CSS/car-rent.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/37872d8ed8.js" crossorigin="anonymous"></script>
+    <title>Car Rent REVO</title>
+  </head>
+  <body>
+    <header class="container-fluid">
+      <h1><img class="logo" src="/static/logo_white@4x.png" alt="logo revo" /></h1>
+      <nav class="navbar navbar-expand-xl navbar-dark bg-transparent p-0 m-0">
+          <div class="collapse navbar-collapse d-flex flex-row" id="navbarNavDropdown">
+            <ul class="navbar-nav first">
+              <li class="nav-item dropdown ">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  <span class="navbar-toggler-icon white"></span>
+                </a>
+                <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item white" href="#">Renting history</a></li>
+                  <li><a class="dropdown-item white" href="#">How it works</a></li>
+                </ul>
+              </li>
+              <li class="nav-item dropdown pe-5">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  User
+                </a>
+                <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                  <li><a class="dropdown-item white" href="#">Account settings</a></li>
+                  <li><a class="dropdown-item white" href="#">Close session</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </header>
+    <main class="container-fluid">
+<!-- wrapper-one -->
+      <section class="container wrapper-one">
+        <div class="btn-wrapper">
+          <a class="back" href="http://127.0.0.1:4000/HTML/cars-list.html"><span class="material-icons">chevron_left</span>Back to select car</a>
+        </div>
+        <article class="car-wrapper">
+<!-- start-slider -->
+          <div id="carousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="/static/e_cars/eniro_1.png" class="d-block low" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/e_cars/eniro_2.png" class="d-block low" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="/static/e_cars/eniro_3.png" class="d-block low" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+<!-- end-slider -->
+          <div class="features">
+            <h5>KIA eNiro</h5>
+            <div class="features2">
+              <h6 class="subtitle">Model:</h6>
+              <p class="text">Version: eNiro 150kW Emotion Long Range</p>
+              <p class="text">Number of seats: 5</p>
+              <h6 class="subtitle">Engine:</h6>
+              <p class="text">Gearbox: Automatic</p>
+              <p class="text">Max power: 204 cv</p>
+            </div>
+          </div>
+        </article>
+      </section>
+<!-- end wrapper-one -->
+<!-- wrapper-two -->
+      <section class="wrapper-two">
+        <article class="subhead">
+          <h5>Reservation form</h5>
+          <p>Fill the fields provided to reserve the selected car.
+            When you confirm the reserve, you’ll be redirected to our secure payment platform.
+          If you may want to change the reservation period, you must get back to select cars.</p>
+        </article>
+        <form class="container horizon" action="/HTML/home.html" method="POST">
+          <div class="container start">
+            <h6 class="subtitle">Reservation period:</h6>
+            <div class="row">
+              <div class="col">
+                <label for="start_date" class="form-label d-flex justify-content-start  mb-0 mt-2">Starting:</label>
+                <input type="datetime-local" class="form-control bg-secondary text-white" name="start_date" disabled>
+              </div>
+              <div class="col align-self-start">
+                <label for="end_date" class="form-label d-flex justify-content-start  mb-0 mt-2">Ending:</label>
+                <input type="datetime-local" class="form-control bg-secondary text-white" name="end_date" disabled>
+              </div>
+            </div>
+            <h6 class="subtitle">Personal info:</h6>
+            <div class="row">
+              <div class="col">
+                <label for="name" class="form-label d-flex justify-content-start  mb-0 mt-2">Name *</label>
+                <input type="text" class="form-control bg-secondary text-white" name="name">
+              </div>
+              <div class="col align-self-start">
+                <label for="surname" class="form-label d-flex justify-content-start mb-0 mt-2">Surname *</label>
+                <input type="text" class="form-control bg-secondary text-white" name="surname">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="phone" class="form-label d-flex justify-content-start mb-0 mt-2">Phone number *</label>
+                <input type="tel" class="form-control bg-secondary text-white" name="surname">
+              </div>
+              <div class="col align-self-start">
+                <label for="email" class="form-label d-flex justify-content-start mb-0 mt-2">Email *</label>
+                <input type="email" class="form-control bg-secondary text-white" name="email">
+              </div>
+            </div>
+          </div>
+          <div class="container start">
+            <h6 class="subtitle">Address info:</h6>
+            <div class="row">
+              <div class="col">
+                <label for="street_name" class="form-label d-flex justify-content-start mb-0 mt-2">Street name *</label>
+                <input type="text" class="form-control bg-secondary text-white" name="street_name">
+              </div>
+              <div class="col">
+                <label for="street_number" class="form-label d-flex justify-content-start mb-0 mt-2">Street number *</label>
+                <input type="number" class="form-control bg-secondary text-white" name="street_number">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="city" class="form-label d-flex justify-content-start mb-0 mt-2">City *</label>
+                <input type="text" class="form-control bg-secondary text-white" name="city">
+              </div>
+              <div class="col">
+                <label for="postal_code" class="form-label d-flex justify-content-start mb-0 mt-2">Postal code *</label>
+                <input type="number" class="form-control bg-secondary text-white" name="postal_code">
+              </div>
+            </div>
+            <h6 class="subtitle">Payment info:</h6>
+            <div class="row">
+              <div class="col">
+                <label for="card_fullname" class="form-label d-flex justify-content-start mb-0 mt-2">Card owner fullname *</label>
+                <input type="text" class="form-control bg-secondary text-white" name="card_fullname">
+              </div>
+              <div class="col">
+                <label for="card_number" class="form-label d-flex justify-content-start mb-0 mt-2">Credit card number *</label>
+                <input type="number" class="form-control bg-secondary text-white" name="card_number">
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="ccv" class="form-label d-flex justify-content-start mb-0 mt-2">CCV *</label>
+                <input type="password" class="form-control bg-secondary text-white" name="ccv">
+              </div>
+            </div>
+          </div >
+          <div class="end">
+            <input class="btn reserve" type="submit" value="MAKE RESERVATION">
+          </div>
+          </form>
+      </section>
+<!-- end wrapper-two -->
+    </main>
+    <footer class="container-fluid">
+      <div class="copy">
+        <p>© 2021 Revo S.L</p>
+      </div>
+      <div>          
+        <form class="form-foo">
+            <div>
+              <label for="suscribe" class="form-label">Receive special bonus</label>
+              <input type="text" class="form-control bg-transparent border border-dark border-2" id="suscribe" placeholder="Type your email">
+            </div>
+            <button type="submit" class="btn send">SEND</button>
+          </form>
+      </div>
+      <div class="social">
+        <p>Stay connected</p>
+        <div class="icons">
+          <a href="https://www.linkedin.com/"><i class="fab fa-linkedin fa-lg p-2"></i></a>
+          <a href="https://twitter.com"><i class="fab fa-twitter fa-lg p-2"></i></a>
+          <a href="https://es-es.facebook.com/"><i class="fab fa-facebook-square fa-lg p-2"></i></a>
+          <a href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg p-2"></i></a>
+        </div>
+      </div>
+    </footer>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

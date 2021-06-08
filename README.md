@@ -21,6 +21,7 @@ un compromiso sostenible con el medio ambiente.
 
 ### EJECUCIÓN DEL PROGAMA:
 Para ejecutar correctamente la aplicación hay que correr los siguientes comandos en la terminal de python:
+
 1- 
 ``
 pip install mysqlclient 
