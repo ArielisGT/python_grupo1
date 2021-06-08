@@ -43,5 +43,5 @@ py manage.py migrate
 
 4-
 ``
-     py manage.py runserver 
+py manage.py runserver 
 ``
