@@ -1,0 +1,130 @@
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 85vh;
+  padding-top: 25vh;
+  background-color:rgb(212, 215, 216);
+}
+.wrapper-one {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 40vw;
+  margin-top: 7vh;
+  color: black;
+  text-align: center;
+}
+h3{
+  font-weight: 600;
+}
+h5 {
+   font-weight: 400;
+}
+.wrapper-two {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items:center;
+  max-width: 95vw;
+  padding: 2rem;
+  margin-top: 5rem;
+  color: black;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.art-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: black;
+  border-radius: 0.5rem;
+  padding: 0 2rem 2rem;
+  min-width: 20vw;
+  max-width: 25vh;
+  margin: 1rem;
+}
+.low {
+  min-width: 20vw;
+  max-width: 25vh;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+.text {
+  max-width: 25vw;
+  padding: 2rem;
+  color: rgb(175, 169, 169);
+
+}
+.sel-car{
+  width: auto;
+  max-height: 3rem;
+  color: black;
+  background-color:rgb(212, 215, 216);
+  height: auto;
+  font-weight: bold;
+  font-size: 0.75rem;
+  margin-top:  1rem;
+}
+.sel-car:hover {
+  color: rgb(212, 215, 216);
+  background-color:black;
+}
+footer {
+  width: 100vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  color: rgb(212, 215, 216);
+  min-height: 10vh;
+  background-color: black;
+  padding: 1rem;
+}
+.copy {
+  font-size: 0.75rem;
+    margin: 0 auto;
+
+}
+.form-foo {
+  max-width: 80vw;
+  min-width: 30vw;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0 auto;
+    font-size: 1rem;
+}
+.send {
+  width: 8rem;
+  color: black;
+  background-color:rgb(212, 215, 216);
+  height: 2.5rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}
+.social {
+  max-width: 30vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 0 auto;
+}
+.icons {
+  max-width: 40vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.fa-lg {
+  color: rgb(212, 215, 216);
+}
+.fa-lg:hover {
+  color: rgb(231, 26, 187);
+}

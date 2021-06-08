@@ -1,0 +1,84 @@
+/* -------------------PRE-CODE----------------
+
+/* para que tome el width desde el borde de la caja.*/
+* {
+ box-sizing: border-box;
+}
+body {
+  font-size: 100%;
+  background-color: rgb(132, 214, 243);
+}
+img {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
+picture {
+  display: block;
+}
+/* -------------------END PRE-CODE----------------*/
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 2rem;
+}
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+}
+.logo {
+  min-width: 20vw;
+  max-width: 20vh;
+  padding:  2rem 0 0 0;
+}
+.middle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.flow {
+  max-width: 50vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 1rem 0;
+}
+.space {
+  margin: 0.5rem;
+}
+.btn-send {
+  border: none;
+  background-color: black;
+  padding: 0.75rem 2rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  border-radius: 5px;
+  margin-top: 1rem;
+}
+h1 {
+  margin-top: 2rem;
+}
+h2 {
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
+  margin: 1rem 2rem
+}
+label {
+  font-size: 0.8rem;
+}
+input {
+  min-width: 25vh;
+}
