@@ -16,6 +16,9 @@ main {
   color: black;
   font-size: 1rem;
 }
+table.center {
+    display: table;
+}
 .view {
   background-color: rgb(78, 165, 228);
   color: white;

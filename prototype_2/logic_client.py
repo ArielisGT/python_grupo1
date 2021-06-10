@@ -26,7 +26,7 @@ def signup(request):
     address = request.POST.get('address')
 
     if not username:
-        return ERROR_NO_USER
+        return ERROR_NO_USERNAME
 
     if not password or len(password) < PASSWORD_MIN_LENGTH:
         return ERROR_NO_PASSWORD

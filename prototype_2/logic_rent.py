@@ -3,6 +3,7 @@
 from .models import Vehicle, VehicleAvailable, VehicleRent
 import datetime
 from django.core.exceptions import ObjectDoesNotExist
+from django.utils.dateparse import parse_datetime
 
 
 # error durante alquiler
@@ -10,6 +11,17 @@ class RentError(Exception):
     def __init__(self, message):
         self.message = message
         super().__init__(message)
+
+
+# parsear intervalo de fechas
+def parse_datetime_interval(begin, end):
+    datetime_begin = parse_datetime(begin)
+    datetime_end = parse_datetime(end)
+
+    if datetime_begin > datetime_end:
+        datetime_begin, datetime_end = datetime_end, datetime_begin
+
+    return datetime_begin, datetime_end
 
 
 # encontrar vehículos disponibles en un intervalo de tiempo

@@ -13,14 +13,12 @@ def home_redirect(request):
     return HttpResponseRedirect("/pr2/home")
 
 # admin: lista de vehículos
-# @login_required
-
-
+@login_required
 def admin_vehicle_list(request):
     # acceso denegado
     # TODO página error 403
-    # if not request.user.is_staff:
-    #     return redirect('client_rent_list')
+    if not request.user.is_staff:
+        return redirect('client_rent_list')
 
     context = {
         'vehicles': Vehicle.vehicles.all()
@@ -29,12 +27,12 @@ def admin_vehicle_list(request):
 
 
 # admin: ver datos de vehículo
-# @login_required
+@login_required
 def admin_view_vehicle(request, vehicle_id):
     # acceso denegado
     # TODO página error 403
-    # if not request.user.is_staff:
-    #     return redirect('client_rent_list')
+    if not request.user.is_staff:
+        return redirect('client_rent_list')
 
     vehicle = Vehicle.vehicles.get(id=vehicle_id)
 
@@ -45,12 +43,12 @@ def admin_view_vehicle(request, vehicle_id):
 
 
 # admin: formulario para crear vehículo
-# @login_required
+@login_required
 def admin_create_vehicle_form(request):
     # acceso denegado
     # TODO página error 403
-    # if not request.user.is_staff:
-    #     return redirect('client_rent_list')
+    if not request.user.is_staff:
+        return redirect('client_rent_list')
 
     context = {
         'heading': 'Nuevo vehículo',
@@ -60,12 +58,12 @@ def admin_create_vehicle_form(request):
 
 
 # admin: formulario para editar vehículo
-# @login_required
+@login_required
 def admin_edit_vehicle_form(request, vehicle_id):
     # acceso denegado
     # TODO página error 403
-    # if not request.user.is_staff:
-    #     return redirect('client_rent_list')
+    if not request.user.is_staff:
+        return redirect('client_rent_list')
 
     vehicle = Vehicle.vehicles.get(id=vehicle_id)
 
@@ -79,12 +77,12 @@ def admin_edit_vehicle_form(request, vehicle_id):
 
 
 # admin: guardar vehículo
-# @login_required
+@login_required
 def admin_save_vehicle(request):
     # acceso denegado
     # TODO página error 403
-    # if not request.user.is_staff:
-    #     return redirect('client_rent_list')
+    if not request.user.is_staff:
+        return redirect('client_rent_list')
 
     vehicle_id = request.POST.get('id')
 
@@ -128,12 +126,12 @@ def admin_save_vehicle(request):
 
 
 # admin: eliminar vehículo
-# @login_required
+@login_required
 def admin_delete_vehicle(request, vehicle_id):
     # acceso denegado
     # TODO página error 403
-    # if not request.user.is_staff:
-    #     return redirect('client_rent_list')
+    if not request.user.is_staff:
+        return redirect('client_rent_list')
 
     VehicleRent.rents.filter(vehicle_id=vehicle_id).delete()
 
@@ -174,16 +172,42 @@ def client_login(request):
 
     login(request, user)
 
-    client = Client.clients.get(user_id=user.id)
+    if request.user.is_staff:
+        # el usuario es un admin
+        return redirect('admin_vehicle_list')
 
-    request.session['client_id'] = client.id
+    else:
+        # el usuario es un cliente
+        client = Client.clients.get(user_id=user.id)
 
-    return redirect('home')
+        request.session['client_id'] = client.id
+
+        return redirect('home')
+
+
+# generación de datos temporales de valores de form de usuario
+class UserFormValues:
+    @staticmethod
+    def get_values(request):
+        return {
+            'username': UserFormValues.get_form_value(request, 'username'),
+            'password': UserFormValues.get_form_value(request, 'password'),
+            'password2': UserFormValues.get_form_value(request, 'password2'),
+            'email': UserFormValues.get_form_value(request, 'email'),
+            'address': UserFormValues.get_form_value(request, 'address')
+        }
+
+    @staticmethod
+    def get_form_value(request, key):
+        value = request.POST.get(key)
+        return value if value else ''
 
 
 # cliente: formulario de registro
 def client_signup_form(request):
-    context = {}
+    context = request.session['user_form_values']
+
+    del request.session['user_form_values']
 
     error = request.GET.get('error')
 
@@ -220,6 +244,8 @@ def client_signup(request):
     error = logic_client.signup(request)
 
     if error:
+        request.session['user_form_values'] = UserFormValues.get_values(request)
+
         return HttpResponseRedirect(
             reverse('client_signup_form')
             + f'?error={error}'
@@ -229,6 +255,7 @@ def client_signup(request):
 
 
 # cliente: home
+@login_required
 def home(request):
     context = {}
     return render(request, 'home.html', context)
@@ -236,17 +263,22 @@ def home(request):
 
 # alquiler: solicitar alquiler
 # indicar intervalo de alquiler
-# @login_required
+@login_required
 def rent_request_form(request):
     context = {}
     return render(request, 'rent_request_form.html', context)
 
 
 # alquiler: seleccionar vehículo
-# @login_required
+@login_required
 def rent_select_vehicle(request):
     rent_begin = request.GET.get("begin")
     rent_end = request.GET.get("end")
+
+    if not rent_begin or not rent_end:
+        return redirect('rent_request_form')
+
+    rent_begin, rent_end = logic_rent.parse_datetime_interval(rent_begin, rent_end)
 
     vehicles = logic_rent.find_available_vehicles(rent_begin, rent_end)
 
@@ -261,7 +293,7 @@ def rent_select_vehicle(request):
 
 # alquiler: reservar vehículo seleccionado
 # introducir datos de pago
-# @login_required
+@login_required
 def rent_reserve_vehicle_form(request, vehicle_id, rent_begin, rent_end):
     vehicle = Vehicle.vehicles.get(id=vehicle_id)
     context = {
@@ -274,12 +306,15 @@ def rent_reserve_vehicle_form(request, vehicle_id, rent_begin, rent_end):
 
 
 # alquiler: confirmar alquiler
-# @login_required
+@login_required
 def rent_confirm(request, vehicle_id, rent_begin, rent_end):
-    pay_account = request.POST.get('payAccount')
+    if request.user.is_staff:
+        # el usuario es un admin, no un cliente
+        return redirect('admin_vehicle_list')
 
-    # TODO login, eliminar esta línea
-    request.session['client_id'] = 1
+    rent_begin, rent_end = logic_rent.parse_datetime_interval(rent_begin, rent_end)
+
+    pay_account = request.POST.get('payAccount')
 
     client_id = request.session['client_id']
 
@@ -295,8 +330,12 @@ def rent_confirm(request, vehicle_id, rent_begin, rent_end):
 
 
 # cliente: lista de alquileres del cliente
-# @login_required
+@login_required
 def client_rent_list(request):
+    if request.user.is_staff:
+        # el usuario es un admin, no un cliente
+        return redirect('admin_vehicle_list')
+
     client_id = request.session['client_id']
 
     time_from = datetime.datetime.now()
@@ -314,7 +353,7 @@ def client_rent_list(request):
 
 
 # alquiler: ver ficha de alquiler
-# @login_required
+@login_required
 def rent_view(request, rent_id):
     rent = VehicleRent.rents.get(id=rent_id)
 
@@ -326,14 +365,15 @@ def rent_view(request, rent_id):
 
 
 # alquiler: cancelar
-# @login_required
+@login_required
 def rent_cancel(request, rent_id):
     logic_rent.cancel_vehicle_rent(rent_id)
 
-    return HttpResponseRedirect(reverse('client_rent_list'))
+    return redirect('client_rent_list')
 
 
 # logout
+@login_required
 def logout_user(request):
     logout(request)
     return redirect('client_login_form')
