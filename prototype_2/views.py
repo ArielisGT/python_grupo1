@@ -9,8 +9,13 @@ from . import logic_client, logic_rent
 import datetime
 
 
+def home_redirect(request):
+    return HttpResponseRedirect("/pr2/home")
+
 # admin: lista de vehículos
 # @login_required
+
+
 def admin_vehicle_list(request):
     # acceso denegado
     # TODO página error 403
