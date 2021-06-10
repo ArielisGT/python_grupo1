@@ -6,8 +6,10 @@
 {% block content %}
 <main class="container-fluid">
   <section class="wrapper-one">
-    <h5>Please, select a car you are interested in:</h5>
 <!--
+    <h5>Please, select a car you are interested in:</h5>
+-->
+    <h5>Please, select the dates of your next reservation:</h5>
     <form class="container horizon" action="{% url 'rent_select_vehicle' %}" method="GET">
         <div class="col align-self-start">
           <label for="rentBegin" class="form-label d-flex justify-content-start ">Starting:</label>
@@ -19,9 +21,7 @@
         </div>
         <input class="btn cars" type="submit" value="SHOW AVAILABLE CARS">
     </form>
--->
   </section>
-<!--
   <section class="wrapper-two">
     <article class="car-types">
       <h5>Electric Vehicles</h5>
@@ -43,7 +43,6 @@
          electric vehicles (EREVs).</p>
     </article>
   </section>
--->
   <section class="container wrapper-three">
     <article class="art-wrapper">
       <img class="low" src="{% static 'imgs/e_cars/aygo_3.png' %}" alt="Toyota Aygo">

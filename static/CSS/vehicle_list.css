@@ -46,3 +46,13 @@ main {
   color:rgb(209, 31, 141);
   margin: 0 0.5rem;
 }
+.add {
+  background-color: rgb(43, 57, 144);
+  color: white;
+  margin: 0.5rem 0.5rem;
+}
+.add:hover {
+  background-color: rgb(147, 149, 152);
+  color: rgb(43, 57, 144);
+  margin: 0.5rem 0.5rem;
+}

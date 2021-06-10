@@ -1,0 +1,24 @@
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 30vh;
+}
+.actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 2rem;
+}
+.back {
+  background-color: rgb(78, 165, 228);
+  color: white;
+  margin: 0 0.5rem;
+}
+.back:hover {
+  background-color: white;
+  color: rgb(78, 165, 228);
+  margin: 0 0.5rem;
+}

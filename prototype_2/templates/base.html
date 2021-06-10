@@ -15,14 +15,17 @@
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/home.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/cars-list.css' %}"/>
-    <link rel="stylesheet" href="{% static 'CSS/admin_vehicle_form.css' %}"/>
-    <link rel="stylesheet" href="{% static 'CSS/admin_vehicle_list.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/vehicle_form.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/vehicle_list.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/vehicle_view.css' %}"/>
     <script src="https://kit.fontawesome.com/37872d8ed8.js" crossorigin="anonymous"></script>
     <title>{% block title %}Revo{% endblock %}</title>
 </head>
 <body>
 <header class="container-fluid">
-    <h1><img class="logo" src="{% static 'imgs/logo_white@4x.png' %}" alt="logo Revo"/></h1>
+    <h1>
+        <a href="/pr2/home"><img class="logo" src="{% static 'imgs/logo_white@4x.png' %}" alt="logo Revo"/></a>
+    </h1>
     <nav class="navbar navbar-expand-xl navbar-dark bg-transparent p-0 m-0">
         <div class="collapse navbar-collapse d-flex flex-row" id="navbarNavDropdown">
             <ul class="navbar-nav first">
@@ -32,6 +35,7 @@
                         <span class="navbar-toggler-icon white"></span>
                     </a>
                     <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
+                        <li><a class="dropdown-item white" href="/pr2/admin/vehicle/list">Vehicle management</a></li>
                         <li><a class="dropdown-item white" href="#">Renting history</a></li>
                         <li><a class="dropdown-item white" href="#">How it works</a></li>
                     </ul>

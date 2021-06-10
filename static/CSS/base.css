@@ -40,6 +40,7 @@ header {
   min-width: 20vw;
   max-width: 20vh;
   padding:  1rem 0 0 0;
+  margin: 0;
 }
 footer {
   width: 100vw;
@@ -70,7 +71,15 @@ footer {
 .send {
   width: 8rem;
   color: black;
-  background-color:rgb(212, 215, 216);
+  background-color: rgb(78, 165, 228);
+  height: 2.5rem;
+  font-weight: 600;
+  margin-left: 2rem;
+}.
+send:hover {
+  width: 8rem;
+  color: rgb(78, 165, 228);
+  background-color: rgb(0, 0, 0);
   height: 2.5rem;
   font-weight: 600;
   margin-left: 2rem;
@@ -94,6 +103,6 @@ footer {
 .fa-lg {
   color: rgb(212, 215, 216);
 }
-.fa-lg:hover {
-  color: rgb(231, 26, 187);
+fa-lg:hover {
+  color: rgb(78, 165, 228);
 }
