@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="{% static 'CSS/normalize.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/base.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/home.css' %}"/>
-    <link rel="stylesheet" href="{% static 'CSS/cars-list.css' %}"/>
+    <link rel="stylesheet" href="{% static 'CSS/cars_list.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/vehicle_form.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/vehicle_list.css' %}"/>
     <link rel="stylesheet" href="{% static 'CSS/vehicle_view.css' %}"/>
@@ -26,7 +26,7 @@
     <h1>
         <a href="/pr2/home"><img class="logo" src="{% static 'imgs/logo_white@4x.png' %}" alt="logo Revo"/></a>
     </h1>
-    <nav class="navbar navbar-expand-xl navbar-dark bg-transparent p-0 m-0">
+    <nav class="navbar navbar-expand-xl navbar-dark bg-transparent p-0">
         <div class="collapse navbar-collapse d-flex flex-row" id="navbarNavDropdown">
             <ul class="navbar-nav first">
                 <li class="nav-item dropdown ">
@@ -36,7 +36,7 @@
                     </a>
                     <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item white" href="/pr2/admin/vehicle/list">Vehicle management</a></li>
-                        <li><a class="dropdown-item white" href="#">Renting history</a></li>
+                        <li><a class="dropdown-item white" href="/pr2/client/rent/list">Renting history</a></li>
                         <li><a class="dropdown-item white" href="#">How it works</a></li>
                     </ul>
                 </li>
@@ -47,7 +47,7 @@
                     </a>
                     <ul class="dropdown-menu bg-secondary" aria-labelledby="navbarDropdownMenuLink">
                         <li><a class="dropdown-item white" href="#">Account settings</a></li>
-                        <li><a class="dropdown-item white" href="#">Close session</a></li>
+                        <li><a class="dropdown-item white" href="/pr2/logout/">Close session</a></li>
                     </ul>
                 </li>
             </ul>
@@ -63,7 +63,7 @@
     <div>
         <form class="form-foo">
             <div>
-                <label for="suscribe" class="form-label">Receive special bonus</label>
+                <label for="suscribe" class="form-label white">Receive special bonus</label>
                 <input type="text" class="form-control bg-transparent border border-dark border-2 white" id="suscribe"
                        placeholder="Type your email">
             </div>

@@ -10,7 +10,7 @@ import datetime
 
 
 def home_redirect(request):
-    return HttpResponseRedirect("/pr2/home")
+    return HttpResponseRedirect("/pr2/client/login/form")
 
 # admin: lista de vehículos
 @login_required
@@ -150,10 +150,12 @@ def client_login_form(request):
     error = request.GET.get('error')
     if error == logic_client.ERROR_NO_USER:
         context['message'] = '''
-<p>Ha introducido un nombre de usuario y/o contraseña no válidos.</p>
-'''
+        <div class="message">
+            <p class="white">You have entered an invalid username &/or password</p>
+        </div>
+        '''
 
-    return render(request, 'client_login_form.html', context)
+    return render(request, 'client_login_form_2.html', context)
 
 
 # cliente
@@ -166,7 +168,7 @@ def client_login(request):
 
     if user is None:
         return HttpResponseRedirect(
-            reverse('client_login_form')
+            reverse('client_login_form_2')
             + f'?error={logic_client.ERROR_NO_USER}'
         )
 
@@ -174,7 +176,7 @@ def client_login(request):
 
     if request.user.is_staff:
         # el usuario es un admin
-        return redirect('admin_vehicle_list')
+        return redirect('home')
 
     else:
         # el usuario es un cliente
@@ -191,10 +193,10 @@ class UserFormValues:
     def get_values(request):
         return {
             'username': UserFormValues.get_form_value(request, 'username'),
-            'password': UserFormValues.get_form_value(request, 'password'),
-            'password2': UserFormValues.get_form_value(request, 'password2'),
             'email': UserFormValues.get_form_value(request, 'email'),
-            'address': UserFormValues.get_form_value(request, 'address')
+            'address': UserFormValues.get_form_value(request, 'address'),
+            'password': UserFormValues.get_form_value(request, 'password'),
+            'password2': UserFormValues.get_form_value(request, 'password2')
         }
 
     @staticmethod
@@ -213,27 +215,31 @@ def client_signup_form(request):
 
     if error == logic_client.ERROR_NO_USERNAME:
         context['message'] = '''
-    <p>Debe introducir un nombre de usuario.</p>
-    '''
+         <div class="message">
+            <p class="gray">Debe introducir un nombre de usuario.</p>
+         </div>
+        '''
 
     elif error == logic_client.ERROR_NO_PASSWORD:
         context['message'] = f'''
-    <p>Debe introducir una contraseña de al menos {logic_client.PASSWORD_MIN_LENGTH} caracteres.</p>
-    '''
+        <div class="message">
+            <p class="gray">Debe introducir una contraseña de al menos {logic_client.PASSWORD_MIN_LENGTH} caracteres.</p>
+        </div>
+        '''
 
     elif error == logic_client.ERROR_PASSWORD_MISMATCH:
         context['message'] = '''
-    <p>Las contraseñas que ha introducido no coinciden.</p>
+    <p class="gray">Las contraseñas que ha introducido no coinciden.</p>
     '''
 
     elif error == logic_client.ERROR_NO_EMAIL:
         context['message'] = '''
-    <p>Debe introducir una dirección email válida.</p>
+    <p class="gray">Debe introducir una dirección email válida.</p>
     '''
 
     elif error == logic_client.ERROR_NO_ADDRESS:
         context['message'] = '''
-    <p>Debe introducir una dirección.</p>
+    <p class="gray">Debe introducir una dirección.</p>
     '''
 
     return render(request, 'client_signup_form.html', context)
@@ -251,7 +257,7 @@ def client_signup(request):
             + f'?error={error}'
         )
 
-    return redirect('client_login_form')
+    return redirect('client_login_form_2')
 
 
 # cliente: home
@@ -376,4 +382,4 @@ def rent_cancel(request, rent_id):
 @login_required
 def logout_user(request):
     logout(request)
-    return redirect('client_login_form')
+    return redirect('client_login_form_2')

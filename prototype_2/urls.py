@@ -41,7 +41,7 @@ urlpatterns = [
     path(
         'client/login/form/',
         views.client_login_form,
-        name='client_login_form'
+        name='client_login_form_2'
     ),
     path(
         'client/login/',
@@ -70,6 +70,7 @@ urlpatterns = [
     ),
 
     # alquiler
+
     path(
         'rent/request/',
         views.rent_request_form,

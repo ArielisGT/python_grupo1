@@ -29,7 +29,6 @@ picture {
   min-width: 20vw;
   max-width: 25vh;
 }
-
 .links {
   border: 2px solid white;
   padding: 0.25rem 1rem;
@@ -38,6 +37,10 @@ picture {
   text-decoration: none;
   color: white;
   border-radius: 5px;
+}
+.links:hover {
+  background-color: rgb(137, 5, 86);
+  color: white;
 }
 .btn-send {
   border: none;
@@ -48,6 +51,12 @@ picture {
   text-decoration: none;
   color: white;
   border-radius: 5px;
+  margin-top: 2rem;
+}
+.btn-send:hover {
+  background-color: rgba(255, 255, 255, 1);
+  color: rgb(137, 5, 86);
+  font-weight: bold;
 }
 .vertical {
   display: flex;
@@ -63,7 +72,6 @@ h2 {
   text-align: center;
   margin-top: 2rem;
   color: white;
-
 }
 section {
   display: flex;
@@ -81,4 +89,22 @@ form {
   align-items: center;
   margin-top: 3rem;
   color: white;
+}
+.gray {
+    color: rgba(255, 255, 255, 0.5);
+}
+.white {
+    color: rgba(255, 255, 255, 1);
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 10rem;
+    background-color: rgb(208, 61, 24);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
 }

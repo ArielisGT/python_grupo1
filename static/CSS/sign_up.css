@@ -82,3 +82,21 @@ label {
 input {
   min-width: 25vh;
 }
+.gray {
+    color: rgba(255, 255, 255, 0.5);
+}
+.white {
+    color: rgba(255, 255, 255, 1);
+}
+.message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 10rem;
+    background-color: rgb(208, 61, 24);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+}

@@ -15,7 +15,9 @@ picture {
 }
 /* -------------------END PRE-CODE----------------*/
 .first {
+/*
   padding-top: 1rem;
+*/
   width: 90vw;
   display: flex;
   justify-content: space-between;
@@ -32,15 +34,15 @@ header {
   justify-content: center;
   align-items: center;
   position: fixed;
-  background-color:rgb(0, 0, 0);
+  background-color: rgb(0, 0, 0);
   z-index: 1;
-  margin: 0 auto;
 }
 .logo {
-  min-width: 20vw;
+  min-width: 15vw;
   max-width: 20vh;
-  padding:  1rem 0 0 0;
-  margin: 0;
+/*
+  margin: 0 auto;
+*/
 }
 footer {
   width: 100vw;
