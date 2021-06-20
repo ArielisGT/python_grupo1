@@ -4,9 +4,9 @@
 {% block title %}Seleccionar vehículo{% endblock %}
 
 {% block content %}
-<main class="container-fluid gray-5">
+<main class="container-fluid cyan">
         <div class="list">
-          <h2>Renting List</h2>
+          <h4>Renting List</h4>
           <a class="btn action-new" href="{% url 'rent_request_form' %}">New rent</a>
         </div>
     <section class="container wrapper-rent">
@@ -25,7 +25,7 @@
             <p class="text">{{ rent.vehicle.model }}</p>
           </article>
           <div>
-            <a class="btn action-view" href="{% url 'rent_view' rent.pk %}">View details</a>
+            <a class="btn action-view" href="{% url 'rent_view' rent.pk %}">View info</a>
             <a class="btn action-del" href="{% url 'rent_cancel' rent.pk %}">Cancel rent</a>
           </div>
         </article>

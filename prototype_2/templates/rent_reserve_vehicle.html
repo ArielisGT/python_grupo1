@@ -1,10 +1,43 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Reservar vehículo{% endblock %}
+{% block title %}Car reservation{% endblock %}
 
 {% block content %}
-<main class="container-fluid">
+<main class="container-fluid cyan">
+    <div class="list">
+        <h4>Car reservation</h4>
+    </div>
+    <section class="container wrapper-pay">
+        <article class="info-wrapper">
+          <h5>Vehicle info</h5>
+          <div class="info">
+              <p class="title-pay">ID</p>
+              <p class="text-pay">{{ vehicle.id }}</p>
+          </div>
+          <div class="info">
+          <p class="title-pay">Model</p>
+          <p class="text-pay">{{ vehicle.model }}</p>
+          </div>
+          <div class="info">
+          <p class="title-pay">Plate number</p>
+          <p class="text-pay">{{ vehicle.number }}</p>
+          </div>
+          <div class="pay">
+             <h5>Payment info</h5>
+             <form class="container" action="{% url 'rent_confirm' vehicle_id rent_begin rent_end %}" method="POST">
+             {% csrf_token %}
 
+             <label class="form-label normal" for="payAccount">Credit account number</label>
+             <input id="payAccount" name="payAccount" type="text" class="form-control bg-transparent border-info border-2 ">
+
+             <button class="btn action-confirm" type="submit">Confirm reservation</button>
+             </form>
+         </div>
+        </article>
+    </section>
+<!-------------------------------Alex code---------------------------->
+<!--
     <h1>Reservar vehículo</h1>
     <table>
         <thead>
@@ -23,7 +56,7 @@
     </table>
 
     <h2>Datos de pago</h2>
-    <form action="{% url 'rent_confirm' vehicle_id rent_begin rent_end %}" method="POST">
+    <form  action="{% url 'rent_confirm' vehicle_id rent_begin rent_end %}" method="POST">
         {% csrf_token %}
 
         <label for="payAccount">Número de cuenta</label>
@@ -31,5 +64,6 @@
 
         <button type="submit">Confirmar alquiler</button>
     </form>
+-->
 </main>
 {% endblock %}
