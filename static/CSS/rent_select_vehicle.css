@@ -1,0 +1,99 @@
+* {
+  box-sizing: border-box;
+}
+.cyan {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 25vh 0 2rem;
+  background-color: rgb(78, 165, 228);
+}
+.list {
+  min-width: 30vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  background-color: black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: -0.25rem;
+}
+.white {
+    color: white;
+}
+.wrapper-cars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 90vw;
+  color: black;
+  border-radius: 0.5rem;
+  padding: 2rem;
+  background-color: rgba(225, 225, 225, 0.5);
+}
+.item-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 0.5rem;
+  min-width: 10vh;
+  max-width: 50vw;
+  margin: 1rem;
+}
+.car-item {
+  min-width: 10vh;
+  max-width: 50vw;
+  border-radius: 0.5rem 0.5rem 0 0 ;
+}
+.features {
+  max-width: 25vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.line {
+  max-width: 20vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: baseline;
+  flex-wrap: wrap;
+  border-radius: 0.5rem;
+}
+.subtitle {
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 1);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 0.5rem;
+  border-radius: 0.5rem 0 0 0.5rem;
+}
+.data {
+  max-width: 25vw;
+  font-size: 1rem;
+  font-weight: 500;
+  color: rgb(0, 0, 0);
+  background-color: rgba(255, 255, 255, 1);
+  padding: 0.5rem 1rem;
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+.action-res {
+  width: auto;
+  max-height: 3rem;
+  color: white;
+  background-color: rgb(209, 31, 141);
+  font-weight: bold;
+  font-size: 0.85rem;
+  margin: 0.25rem;
+}
+
