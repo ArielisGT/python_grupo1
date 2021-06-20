@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 .cyan {
   display: flex;
   flex-direction: column;
@@ -17,98 +20,93 @@
   padding: 0.25rem 0.25rem 0.25rem 1rem;
   margin-bottom: -0.5rem;
 }
-.wrapper-rent {
+h4 {
+  color: white;
+  font-weight: 600;
+  padding-right: 1rem;
+}
+h5 {
+  color: white;
+  font-weight: 600;
+}
+.wrapper-pay {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  max-width: 85vw;
+  max-width: 60vw;
   padding: 2rem;
   color: black;
   flex-wrap: wrap;
   margin-bottom: 2rem;
   margin: 0 auto;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(255, 255, 255, 0.2);
   border-radius: 0.5rem;
   z-index: 0;
   }
-.data-wrapper {
+.info-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(209, 31, 141, 0.7);
+  background-color: rgb(38, 80, 110);
   border-radius: 0.5rem;
-  border-top: 8px solid black;
   min-width: 25vw;
   max-width: 50vw;
   margin: 1rem;
   padding: 1rem;
 }
-.date {
+.info {
+  min-width: 20vw;
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: baseline;
+  justify-content: space-between;
+  align-items: center;
   flex-wrap: wrap;
+  background-color: rgb(0, 0, 0);
+  margin: 0.25rem;
+  border-radius: 0.5rem;
 }
-.title {
+.title-pay {
   font-size: 0.8rem;
   font-weight: 600;
-  color: rgb(175, 169, 169);
-  padding: none;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 0 0.5rem ;
 }
-.text {
+.text-pay {
   font-size: 0.8rem;
   font-weight: 600;
-  min-width: 25vh;
   color: rgb(255, 255, 255);
-  padding: none;
+  padding: 0 0.5rem ;
 }
-.vehicle {
+.pay {
+  min-width: 20vw;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  min-width: 20vw;
-  max-width: 20vw;
-  background-color: black;
-  border-radius: 0.5rem;
-  margin-bottom: 1rem;
-}
-.car {
-  min-width: 20vw;
-  max-width: 20vw;
-  border-radius: 0.5rem 0.5rem 0 0;
-}
-.action-view {
-  width: auto;
-  max-height: 3rem;
-  color: white;
+  flex-wrap: wrap;
   background-color: rgb(78, 165, 228);
-  height: auto;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin: 0.25rem;
+  padding: 1rem;
+  margin: 0.75rem;
+  border-radius: 0.5rem;
 }
-.action-new {
+.normal {
+  font-weight: 500;
+  font-size: 1rem;
+}
+.action-confirm {
   width: auto;
   max-height: 3rem;
   color: white;
-  background-color: rgb(209, 31, 141);
+  background-color: rgb(101, 17, 83);
   height: auto;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin: 0.25rem;
+  font-weight: 500;
+  font-size: 1rem;
+  margin-top: 1rem;
 }
-.action-del {
-  width: auto;
-  max-height: 3rem;
-  color: white;
-  background-color: rgb(240, 96, 29);
-  height: auto;
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin: 0.25rem;
+.action-confirm:hover {
+  color: rgb(78, 165, 228);
+  background-color: rgb(101, 17, 83);
 }
 
