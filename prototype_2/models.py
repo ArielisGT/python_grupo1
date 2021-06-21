@@ -46,10 +46,11 @@ class Client(models.Model):
 class Vehicle(models.Model):
     # marca y modelo
     model = models.CharField(max_length=40)
-
     # matrícula
     number = models.CharField(max_length=10)
-
+    img1 = models.CharField(max_length=100, null=True)
+    img2 = models.CharField(max_length=100, null=True)
+    img3 = models.CharField(max_length=100, null=True)
     vehicles = models.Manager()
 
 

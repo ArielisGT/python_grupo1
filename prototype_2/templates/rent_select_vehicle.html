@@ -11,7 +11,7 @@
         {% for vehicle in vehicles %}
             <article class="item-wrapper">
                   <div class="car-container">
-                      <img class="car-item " src="{% static 'imgs/e_cars/eniro_1.png' %}" alt="KIA eNiro"/>
+                      <img class="car-item " src="{% static 'imgs/e_cars/' %}{{ vehicle.img1 }}" alt='{{ vehicle.model }}'/>
                   </div>
               <div class="features">
                   <div class="line">

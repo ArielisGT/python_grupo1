@@ -18,12 +18,12 @@
 </head>
 <body>
 {% block content %}
-    <main class="container wrapper">
-      <section>
+    <main class="container black">
+      <section class="login-wrapper">
           <h1>
             <img class="logo" src="/static/imgs/logo_high.png" alt="logo revo" />
           </h1>
-          <h2>Welcome to your next online renting of electric vehicles . We have infinite possibilities that suit your needs.</h2>
+          <h2>Welcome to your next online renting of electric vehicles . We have infinite possibilities to suit your needs.</h2>
           <h2 class="gray">Please login with your user & password to enter the application</h2>
               {{ message | safe }}
           <form class="container" action="{% url 'client_login' %}" method="POST">
