@@ -21,10 +21,10 @@
               <p class="text">{{ rent.time_end }}</p>
           </div>
           <article class="vehicle">
-            <img class="car" src="{% static 'imgs/e_cars/e208_1.png' %}" alt="PEUGEOT e208"/>
+            <img class="car" src="{% static 'imgs/e_cars/' %}{{ rent.vehicle.img1 }}" alt='{{ rent.vehicle.model }}'/>
             <p class="text">{{ rent.vehicle.model }}</p>
           </article>
-          <div>
+          <div class="buttons">
             <a class="btn action-view" href="{% url 'rent_view' rent.pk %}">View info</a>
             <a class="btn action-del" href="{% url 'rent_cancel' rent.pk %}">Cancel rent</a>
           </div>
