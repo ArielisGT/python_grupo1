@@ -4,33 +4,33 @@
 {% block title %}Home Revo{% endblock %}
 
 {% block content %}
-<main class="container-fluid">
-    <section class="wrapper-one">
+<main class="container-fluid magenta">
+    <section class="home-wrap">
         <h3>Let’s move together</h3>
-        <h5>We improved our variety of vehicles so you can decide which solution is better.
-            Search for the right choice and in just one click we’ll do magic.</h5>
+        <p class="regular">We improved our variety of vehicles so you can decide which solution is better.
+            Search for the right choice and in just one click we’ll do magic.</p>
     </section>
-    <section class="container wrapper-two">
+    <section class="container home-wrap2">
         <article class="art-wrapper">
             <img class="low" src="{% static 'imgs/audi_etron_gt.png' %}" alt="Audi eTron GT">
-            <div class="text">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+            <div class="text-home">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
                 squid.
             </div>
-            <a class="btn sel-car" href="{% url 'rent_request_form' %}">SELECT E-CAR</a>
+            <a class="select" href="{% url 'rent_request_form' %}">SELECT E-CAR</a>
         </article>
         <article class="art-wrapper">
             <img class="low" src="{% static 'imgs/zero_dsr.png' %}" alt="Zero DSR">
-            <div class="text">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+            <div class="text-home">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
                 squid.
             </div>
-            <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/moto-list.html">SELECT E-MOTORBIKE</a>
+            <a class="select" href="#">SELECT E-MOTORBIKE</a>
         </article>
         <article class="art-wrapper">
             <img class="low" src="{% static 'imgs/e_scooter_2.png' %}" alt="Scooters Revo">
-            <div class="text">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+            <div class="text-home">Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
                 squid.
             </div>
-            <a class="btn sel-car" href="http://127.0.0.1:4000/HTML/scooter-list.html">SELECT E-SCOOTER</a>
+            <a class="select" href="#">SELECT E-SCOOTER</a>
         </article>
     </section>
 </main>

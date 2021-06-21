@@ -1,0 +1,83 @@
+.dark-cyan {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 85vh;
+  padding-top: 20vh;
+  background-color: rgb(45, 89, 120);
+}
+.request-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-width: 50vw;
+  max-width: 50vw;
+  color: black;
+  padding-top: 8vh;
+}
+.horizon {
+  min-width: 40vw;
+  display: flex;
+  flex-direction:row;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  font-size: 0.75rem;
+  padding: 1rem;
+}
+.sep {
+  min-width: 20vh;
+  padding: 0 0.25rem;
+}
+.request-wrapper2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  max-width: 90vw;
+  padding: 1rem;
+  color: white;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+.part {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 1rem;
+}
+.req-img {
+  min-width: 10vh;
+  max-width: 15vh;
+  border-radius: 0.5rem;
+  margin: 1rem;
+}
+
+.car-types {
+  min-height: 20vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  padding: 0 2rem;
+  border-left: 2px solid black;
+}
+.type-sub {
+display: flex;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.type-info {
+  min-width: 15vh;
+  max-width: 30vh;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+}

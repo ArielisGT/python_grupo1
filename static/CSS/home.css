@@ -1,36 +1,37 @@
-main {
+.magenta {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
   min-height: 85vh;
-  padding-top: 25vh;
-  background-color:rgb(212, 215, 216);
+  padding-top: 20vh;
+  background-color: rgba(209, 31, 141, 1);
 }
-.wrapper-one {
+.home-wrap {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   max-width: 40vw;
-  margin-top: 7vh;
+  margin-top: 10vh;
   color: black;
   text-align: center;
 }
 h3{
-  font-weight: 600;
+  font-weight: bold;
 }
-h5 {
+.regular {
+   color: white;
    font-weight: 400;
 }
-.wrapper-two {
+.home-wrap2 {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items:center;
+  align-items: flex-start;
   max-width: 95vw;
   padding: 2rem;
-  margin-top: 5rem;
+  margin-top: 1.5rem;
   color: black;
   flex-wrap: wrap;
   margin-bottom: 2rem;
@@ -52,22 +53,30 @@ h5 {
   max-width: 25vh;
   border-radius: 0.5rem 0.5rem 0 0;
 }
-.text {
+.text-home {
+  min-width: 25vh;
   max-width: 25vw;
   padding: 2rem;
-  color: rgb(175, 169, 169);
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
+  font-weight: 600;
 }
-.sel-car{
-  width: auto;
-  max-height: 3rem;
-  color: black;
-  background-color:rgb(212, 215, 216);
-  height: auto;
+.select {
+  min-width: 2rem;
+  max-height: auto;
+  color: white;
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(0, 0, 0);
+  border: 1px solid white;
+  min-height: 1rem;
   font-weight: bold;
   font-size: 0.75rem;
   margin-top:  1rem;
+  padding:0.5rem;
+  border-radius: 0.25rem;
 }
-.sel-car:hover {
-  color: rgb(212, 215, 216);
-  background-color:black;
+.select:hover {
+  color: white;
+  background-color: rgb(209, 31, 141);
 }
