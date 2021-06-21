@@ -23,19 +23,19 @@
 .white {
     color: white;
 }
-.wrapper-cars {
+.wrapper-viewcar {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 90vw;
+  max-width: 70vw;
   color: black;
   border-radius: 0.5rem;
   padding: 2rem;
-  background-color: rgba(225, 225, 225, 0.5);
+  background-color: rgba(225, 225, 225, 0.3);
 }
-.item-wrapper {
+.viewcar-item {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -43,33 +43,28 @@
   flex-wrap: wrap;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
-  min-width: 10vh;
-  max-width: 50vw;
+  border-left: 8px solid black;
+  min-width: 20vh;
+  max-width: 75vw;
   margin: 1rem;
+  padding: 1rem 1rem 1rem 0;
 }
-.car-container {
-  min-width: 20vh;
-  max-width: 25vw;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-}
-.car-item {
+.car-slide {
   min-width: 10vh;
   max-width: 25vw;
-  border-radius: 0.5rem 0 0 0.5rem;
+  border-radius: 0 0.5rem 0.5rem 0 ;
 }
-.features {
-  min-width: 20vh;
+.inforent {
   max-width: 25vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: flex-start;
   flex-wrap: no-wrap;
-  padding: 1rem;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.3);
+  margin: 1rem;
 }
 .line {
   max-width: 20vw;
@@ -80,20 +75,20 @@
   flex-wrap: wrap;
   border-radius: 0.5rem;
 }
-.subtitle {
+.heading {
   font-size: 1rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
   padding: 0.5rem;
   border-radius: 0.5rem 0 0 0.5rem;
 }
-.data {
+.infodata {
   max-width: 25vw;
   font-size: 1rem;
-  font-weight: 500;
+  font-weight: 600;
   color: rgb(0, 0, 0);
-  background-color: rgba(255, 255, 255, 1);
+  background-color: rgba(255, 255, 255, 0.7);
   padding: 0.5rem 1rem;
   border-radius: 0 0.5rem 0.5rem 0;
 }

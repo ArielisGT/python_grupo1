@@ -1,36 +1,71 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Datos vehículo #{{ vehicle.id }}{% endblock %}
+{% block title %}Vehicle info{{ vehicle.id }}{% endblock %}
 
 {% block content %}
-<main class="container-fluid">
-
-    <h1>Datos de alquiler</h1>
-
-    <h2>Vehículo</h2>
-    <dl>
-        <dt>Modelo</dt>
-        <dd>{{ rent.vehicle.model }}</dd>
-
-        <dt>Matrícula</dt>
-        <dd>{{ rent.vehicle.number }}</dd>
-    </dl>
-
-    <h2>Alquiler</h2>
-    <dl>
-        <dt>Desde</dt>
-        <dd>{{ rent.time_begin }}</dd>
-
-        <dt>Hasta</dt>
-        <dd>{{ rent.time_end }}</dd>
-
-        <dt>Cuenta de pago</dt>
-        <dd>{{ rent.pay_account }}</dd>
-    </dl>
-
-    <ul>
-        <li><a href="{% url 'client_rent_list' %}">Volver a la lista de alquileres</a></li>
-        <li><a href="{% url 'rent_cancel' rent.pk %}">Cancelar alquiler</a></li>
-    </ul>
+<main class="container-fluid cyan">
+    <div class="list">
+      <h5 class="white">Reservation details</h5>
+    </div>
+    <section class="container wrapper-viewcar">
+            <article class="viewcar-item">
+             <!-- start-slider -->
+              <div id="carousel1" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                  <button type="button" data-bs-target="#carousel1" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                  <button type="button" data-bs-target="#carousel1" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                  <button type="button" data-bs-target="#carousel1" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                  <div class="carousel-item active">
+                      <img class="car-slide d-block w-100" src="{% static 'imgs/e_cars/eqa_1.png' %}" alt="MERCEDES BENZ EQA"/>
+                  </div>
+                  <div class="carousel-item">
+                      <img class="car-slide d-block w-100" src="{% static 'imgs/e_cars/eqa_2.png' %}" alt="MERCEDES BENZ EQA"/>
+                  </div>
+                  <div class="carousel-item">
+                    <img class="car-slide d-block w-100" src="{% static 'imgs/e_cars/eqa_3.png' %}" alt="MERCEDES BENZ EQA"/>
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carousel1" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carousel1" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+              <!-- end-slider -->
+              <div class="inforent">
+                  <h5 class="white pb-3">Vehicle info</h5>
+                  <div class="line">
+                      <p class="heading">Model:</p>
+                      <p class="infodata">{{ rent.vehicle.model }}</p>
+                  </div>
+                  <div class="line">
+                      <p class="heading">Plate code:</p>
+                      <p class="infodata">{{ rent.vehicle.number }}</p>
+                  </div>
+                  <h5 class="white pb-3">Renting info</h5>
+                  <div class="line">
+                      <p class="heading">From:</p>
+                      <p class="infodata">{{ rent.time_begin }}</p>
+                  </div>
+                  <div class="line">
+                      <p class="heading">Until:</p>
+                      <p class="infodata">{{ rent.time_end }}</p>
+                  </div>
+                  <div class="line">
+                      <p class="heading">Payment account</p>
+                      <p class="infodata">{{ rent.pay_account }}</p>
+                  </div>
+                  <div class="line">
+                      <a class="btn action-res" href="{% url 'client_rent_list' %}">Back to rent list</a>
+                  </div>
+              </div>
+            </article>
+      </section>
 </main>
 {% endblock %}
