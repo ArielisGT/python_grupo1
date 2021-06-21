@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 .cyan {
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -33,7 +34,7 @@
   color: black;
   border-radius: 0.5rem;
   padding: 2rem;
-  background-color: rgba(225, 225, 225, 0.5);
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .item-wrapper {
   display: flex;
@@ -43,13 +44,13 @@
   flex-wrap: wrap;
   background-color: rgba(0, 0, 0, 0.3);
   border-radius: 0.5rem;
-  min-width: 10vh;
+  min-width: 25vh;
   max-width: 50vw;
   margin: 1rem;
 }
 .car-container {
-  min-width: 20vh;
-  max-width: 25vw;
+  min-width: 15vh;
+  max-width: 30vw;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -57,8 +58,8 @@
   flex-wrap: wrap;
 }
 .car-item {
-  min-width: 10vh;
-  max-width: 25vw;
+  min-width: 15vh;
+  max-width: 30vw;
   border-radius: 0.5rem 0 0 0.5rem;
 }
 .features {
@@ -72,16 +73,17 @@
   padding: 1rem;
 }
 .line {
-  max-width: 20vw;
+  min-width: 20vh;
+  max-width: 25vh;
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: baseline;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   border-radius: 0.5rem;
 }
 .subtitle {
-  font-size: 1rem;
+  font-size: 0.8rem;
   font-weight: 500;
   color: rgba(255, 255, 255, 1);
   background-color: rgba(0, 0, 0, 0.5);
@@ -89,8 +91,8 @@
   border-radius: 0.5rem 0 0 0.5rem;
 }
 .data {
-  max-width: 25vw;
-  font-size: 1rem;
+  max-width: 20vh;
+  font-size: 0.8rem;
   font-weight: 500;
   color: rgb(0, 0, 0);
   background-color: rgba(255, 255, 255, 1);
