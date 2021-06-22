@@ -24,6 +24,7 @@ un compromiso sostenible con el medio ambiente.
 - GIT / Github
 - Trello
 
+
 -----------------------------------------------------------------------------
 
 ### EJECUCIÓN DEL PROGAMA:
