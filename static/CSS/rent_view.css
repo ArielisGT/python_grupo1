@@ -11,7 +11,7 @@
   background-color: rgb(78, 165, 228);
 }
 .list2 {
-  min-width: 30vw;
+  min-width: 35vh;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -20,6 +20,8 @@
   border-radius: 0.5rem;
   padding: 0.5rem;
   margin-bottom: -0.25rem;
+  margin-top: 5vh;
+
 }
 .wrapper-viewcar {
   display: flex;
@@ -27,7 +29,8 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  max-width: 80vw;
+  min-width: 40vw;
+  max-width: 35vh;
   color: black;
   border-radius: 0.5rem;
   padding: 2rem;
@@ -48,21 +51,15 @@
   max-width: 30vh;
   border-radius: 0.5rem ;
 }
-/*
 .thick {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: flex-start;
-  flex-wrap: wrap;
-  min-height: 40vh;
-  border-left: 2px solid black;
-  margin: 0 2rem;
+  min-width: 25vw;
+  height: 2px;
+  border-top: 2px solid rgba(255, 255, 255, 0.5);
+  margin-top: 2rem;
 }
-*/
 .inforent {
-  min-width: 30vh;
-  max-width: 40vw;
+  min-width: 25vw;
+  max-width: 35vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -71,7 +68,7 @@
   padding: 2rem;
   border-radius: 0.5rem;
   background-color: rgba(0, 0, 0, 0.3);
-  margin: 1rem;
+  margin: 2rem;
 }
 .line {
   max-width: 20vw;

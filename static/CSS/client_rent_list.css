@@ -4,7 +4,7 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 30vh 0 2rem;
+  padding: 25vh 0 2rem;
   background-color: rgb(78, 165, 228);
 }
 .list {
@@ -17,7 +17,7 @@
   border-radius: 0.5rem;
   padding: 0.25rem 0.25rem 0.25rem 1rem;
   margin-bottom: -0.5rem;
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 .wrapper-rent {
   display: flex;
@@ -29,9 +29,6 @@
   color: black;
   flex-wrap: wrap;
   margin-bottom: 2rem;
-/*
-  margin: 0 auto;
-*/
   background-color: rgba(0, 0, 0, 0.5);
   border-radius: 0.5rem;
   z-index: 0;
@@ -41,33 +38,37 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: rgba(78, 165, 228, 0.3);
+  background-color: rgba(78, 165, 228, 0.5);
   border-radius: 0.5rem;
-  border-top: 8px solid black;
   min-width: 25vh;
   max-width: 50vw;
   margin: 1rem;
   padding: 1rem;
 }
-.date {
+.field {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: baseline;
   flex-wrap: wrap;
 }
-.title {
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: rgb(175, 169, 169);
-  padding: none;
+.title1 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: rgba(0, 0, 0, 1);
+  padding: 0 1rem;
 }
-.text {
+.thick1 {
+  min-width: 20vw;
+  height: 2px;
+  border-top: 2px solid rgba(0, 0, 0, 0.5);
+  margin: 1rem;
+}
+.text1 {
   font-size: 0.8rem;
   font-weight: 600;
   min-width: 25vh;
   color: rgb(255, 255, 255);
-  padding: none;
 }
 .vehicle {
   display: flex;
@@ -78,12 +79,18 @@
   max-width: 20vw;
   background-color: black;
   border-radius: 0.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem 0;
 }
 .car {
   min-width: 15vh;
   max-width: 20vw;
   border-radius: 0.5rem 0.5rem 0 0;
+}
+.model-info {
+  font-weight: bold;
+  font-size: 0.8rem;
+  color: white;
+  padding: 1rem;
 }
 .buttons {
   display: flex;

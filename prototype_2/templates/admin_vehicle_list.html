@@ -1,14 +1,20 @@
 {% extends "base.html" %}
+{% load static %}
 
-{% block title %}Lista de vehículos{% endblock %}
+{% block title %}REVO Vehicles list{% endblock %}
 
 {% block content %}
-<main class="container-fluid">
-    <h1>Vehicles List</h1>
+<main class="container-fluid admin-list">
+    <div class="admin-title">
+        <h4>Vehicles List</h4>
+        <a class="btn add" href="{% url 'admin_create_vehicle_form' %}">Add vehicle</a>
+    </div>
+    <section class="admin-veh">
     <table class="table center">
         <thead>
         <tr>
             <th scope="col">Id</th>
+            <th scope="col">Main picture</th>
             <th scope="col">Model</th>
             <th scope="col">Plate</th>
             <th scope="col">Actions</th>
@@ -18,17 +24,18 @@
         {% for vehicle in vehicles %}
         <tr>
             <th scope="row">{{ vehicle.id }}</th>
+            <td><img class="img1 w-20" src="{% static 'imgs/e_cars/' %}{{ vehicle.img1 }}" alt='{{ vehicle.model }}'/></td>
             <td>{{ vehicle.model }}</td>
             <td>{{ vehicle.number }}</td>
             <td>
-                <a class="btn view" href="{% url 'admin_view_vehicle' vehicle.pk %}">View</a>
-                <a class="btn edit" href="{% url 'admin_edit_vehicle_form' vehicle.pk %}">Edit</a>
-                <a class="btn del" href="{% url 'admin_delete_vehicle' vehicle.pk %}">Delete</a>
+             <a class="btn view" href="{% url 'admin_view_vehicle' vehicle.pk %}">View</a>
+             <a class="btn edit" href="{% url 'admin_edit_vehicle_form' vehicle.pk %}">Edit</a>
+             <a class="btn del" href="{% url 'admin_delete_vehicle' vehicle.pk %}">Delete</a>
             </td>
         </tr>
         {% endfor %}
         </tbody>
     </table>
-    <a class="btn add" href="{% url 'admin_create_vehicle_form' %}">Add vehicle</a>
+    </section>
 </main>
 {% endblock %}

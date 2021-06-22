@@ -1,9 +1,24 @@
-main {
+.admin-edit {
+    min-height: 85vh;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    padding-top: 30vh;
+    padding-top: 20vh;
+  background-color: rgba(209, 31, 141, 1);
+}
+.veh-edit {
+  min-width: 40vh;
+  max-width: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
 }
 form {
   display: flex;
@@ -11,18 +26,39 @@ form {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  min-width: 25%;
-  max-width: 50vw;
+  min-width: 25vh;
+  max-width: 60vh;
   color: black;
   font-size: 0.75rem;
 }
-.cancel {
-  background-color: rgb(209, 31, 141);
+.label1 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  padding: 0.5rem;
+}
+
+.save {
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
+}
+.save:hover {
+  background-color: white;
+  color: rgba(0, 0, 0, 1);
+  margin-top: 1rem;
+}
+.cancel {
+  background-color: rgb(240, 96, 29);
+  color: white;
+  margin-top: 1rem;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 .cancel:hover {
   background-color: white;
-  color: rgb(209, 31, 141);
+  color: rgb(240, 96, 29);
   margin-top: 1rem;
 }
