@@ -6,16 +6,23 @@ Con un diseño sencillo y visual queremos ofrecer innovación ante la llegada de
 un compromiso sostenible con el medio ambiente. 
 
 ---
-### HERRAMIENTAS USADAS:
+### Stack tecnológico utilizado:
 #### Frontend: 
-- Html5 
-- Css 
+- Html5 / CSS3
 - Bootstrap
 - Figma
+- Visual Studio code
+- Adobe Photoshop
  
 #### Backend: 
-- Django
-- Mysql 
+- DJANGO framework
+- MYSQL database
+- DBEAVER
+- Mysql Workbench
+
+#### Desarrollo:
+- GIT / Github
+- Trello
 
 -----------------------------------------------------------------------------
 
