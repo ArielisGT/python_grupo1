@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block title %}Seleccionar vehículo{% endblock %}
+{% block title %}REVO select vehicle{% endblock %}
 
 {% block content %}
 <main class="container-fluid cyan">
@@ -12,17 +12,18 @@
     <section class="container wrapper-rent">
         {% for rent in rents %}
         <article class="data-wrapper">
-          <div class="date">
-              <p class="title">From</p>
-              <p class="text">{{ rent.time_begin }}</p>
+          <div class="field">
+              <p class="title1">From</p>
+              <p class="text1">{{ rent.time_begin }}</p>
           </div>
-          <div class="date">
-              <p class="title">Until</p>
-              <p class="text">{{ rent.time_end }}</p>
+          <div class="thick1"></div>
+          <div class="field">
+              <p class="title1">Until</p>
+              <p class="text1">{{ rent.time_end }}</p>
           </div>
           <article class="vehicle">
             <img class="car" src="{% static 'imgs/e_cars/' %}{{ rent.vehicle.img1 }}" alt='{{ rent.vehicle.model }}'/>
-            <p class="text">{{ rent.vehicle.model }}</p>
+            <p class="model-info ">{{ rent.vehicle.model }}</p>
           </article>
           <div class="buttons">
             <a class="btn action-view" href="{% url 'rent_view' rent.pk %}">View info</a>
