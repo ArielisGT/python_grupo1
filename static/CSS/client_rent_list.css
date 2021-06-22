@@ -64,14 +64,12 @@
   border-top: 2px solid rgba(0, 0, 0, 0.5);
   margin: 1rem;
 }
-
 .text1 {
   font-size: 0.8rem;
   font-weight: 600;
   min-width: 25vh;
   color: rgb(255, 255, 255);
 }
-
 .vehicle {
   display: flex;
   flex-direction: column;

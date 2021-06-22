@@ -1,22 +1,27 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Datos vehículo #{{ vehicle.id }}{% endblock %}
 
 {% block content %}
-<main class="container-fluid">
-    <h1>Vehículo #{{ vehicle.id }}</h1>
-    <dl>
-        <dt>Modelo</dt>
-        <dd>{{ vehicle.model }}</dd>
-
-        <dt>Matrícula</dt>
-        <dd>{{ vehicle.number }}</dd>
-    </dl>
-
-    <div class="actions">
-        <a class="btn back" href="{% url 'admin_vehicle_list' %}">Back to list</a>
-        <a class="btn edit" href="{% url 'admin_edit_vehicle_form' vehicle.pk %}">Edit vehicle</a>
-        <a class="btn del" href="{% url 'admin_delete_vehicle' vehicle.pk %}">Delete vehicle</a>
+<main class="container-fluid admin-view">
+    <div class="admin-title">
+        <h4>Vehículo #{{ vehicle.id }}</h4>
     </div>
+    <article class="veh-view" >
+        <img class="img-view" src="{% static 'imgs/e_cars/' %}{{ vehicle.img1 }}" alt='{{ vehicle.model }}'/>
+        <div class="field-view">
+           <p class="title-view">Model</p>
+           <p class="text-view">{{ vehicle.model }}</p>
+        </div>
+        <div class="field-view">
+           <p class="title-view">Plate number</p>
+           <p class="text-view">{{ vehicle.number }}</p>
+        </div>
+        <div class="actions">
+            <a class="btn back" href="{% url 'admin_vehicle_list' %}">Back to list</a>
+            <a class="btn edit-view" href="{% url 'admin_edit_vehicle_form' vehicle.pk %}">Edit vehicle</a>
+            <a class="btn del-view" href="{% url 'admin_delete_vehicle' vehicle.pk %}">Delete vehicle</a>
+        </div>
+    </article>
 </main>
 {% endblock %}
