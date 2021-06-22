@@ -51,8 +51,8 @@ def admin_create_vehicle_form(request):
         return redirect('client_rent_list')
 
     context = {
-        'heading': 'Nuevo vehículo',
-        'submitLabel': 'Crear vehículo'
+        'heading': 'New vehicle',
+        'submitLabel': 'Add vehicle'
     }
     return render(request, 'admin_vehicle_form.html', context)
 
@@ -68,9 +68,9 @@ def admin_edit_vehicle_form(request, vehicle_id):
     vehicle = Vehicle.vehicles.get(id=vehicle_id)
 
     context = {
-        'heading': f'Editar vehículo #{vehicle_id}',
+        'heading': f'Edit vehicle #{vehicle_id}',
         'vehicle': vehicle,
-        'submitLabel': 'Guardar vehículo'
+        'submitLabel': 'Save vehicle'
     }
 
     return render(request, 'admin_vehicle_form.html', context)

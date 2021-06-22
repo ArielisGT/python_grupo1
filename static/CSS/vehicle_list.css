@@ -1,9 +1,35 @@
-main {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    padding-top: 30vh;
+.admin-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding-top: 20vh;
+  background-color: rgba(209, 31, 141, 1);
+}
+.admin-title {
+  min-width: 35vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: baseline;
+  background-color: black;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  margin-bottom: -0.25rem;
+  margin-top: 5vh;
+}
+.admin-veh {
+  min-width: 50vw;
+  max-width: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin-bottom: 2rem;
 }
 .center {
   display: flex;
@@ -13,49 +39,60 @@ main {
   flex-wrap: wrap;
   min-width: 25%;
   max-width: 50vw;
-  color: black;
-  font-size: 1rem;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 600;
 }
 table.center {
     display: table;
+}
+.img1 {
+  min-width: 15vh;
+  max-width: 10vw;
+  border-radius: 0.25rem;
 }
 .view {
   background-color: rgb(78, 165, 228);
   color: white;
   margin: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 .view:hover {
   background-color: white;
   color: rgb(78, 165, 228);
-  margin: 0 0.5rem;
 }
 .edit {
   background-color: rgb(0, 0, 0);
   color: white;
   margin: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 .edit:hover {
   background-color: white;
   color: rgb(0, 0, 0);
-  margin: 0 0.5rem;
 }
 .del {
-  background-color: rgb(209, 31, 141);
+  background-color: rgb(240, 96, 29);
   color: white;
   margin: 0 0.5rem;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 .del:hover {
   background-color: white;
-  color:rgb(209, 31, 141);
-  margin: 0 0.5rem;
+  color: rgb(240, 96, 29);
 }
 .add {
-  background-color: rgb(43, 57, 144);
+  background-color: rgb(45, 89, 120);
   color: white;
   margin: 0.5rem 0.5rem;
+  font-weight: 600;
+  font-size: 0.8rem;
 }
 .add:hover {
-  background-color: rgb(147, 149, 152);
-  color: rgb(43, 57, 144);
-  margin: 0.5rem 0.5rem;
+  background-color: rgba(255, 255, 255, 1);
+
+  color: rgb(45, 89, 120);
 }

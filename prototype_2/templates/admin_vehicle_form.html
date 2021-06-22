@@ -1,27 +1,30 @@
 {% extends "base.html" %}
 
-{% block title %}Formulario de vehículo{% endblock %}
+{% block title %}REVO edit vehicle{% endblock %}
 
 {% block content %}
-<main class="container-fluid">
-    <h1>{{ heading }}</h1>
-    <form action="{% url 'admin_save_vehicle' %}" method="POST">
-        {% csrf_token %}
+<main class="container-fluid admin-edit">
+    <div class="admin-title">
+        <h4>{{ heading }}</h4>
+    </div>
+    <div class="veh-edit">
+        <form action="{% url 'admin_save_vehicle' %}" method="POST">
+            {% csrf_token %}
 
-        {% if vehicle %}
-        <input class="form-control" name="id" type="hidden" value="{{ vehicle.id }}">
-        {% endif %}
+            {% if vehicle %}
+            <input class="form-control" name="id" type="hidden" value="{{ vehicle.id }}">
+            {% endif %}
 
-        <label class="form-label" for="vehicleModel">Modelo</label>
-        <input id="vehicleModel" class="form-control" name="model" type="text" value="{{ vehicle.model }}">
+            <label class="form-label label1" for="vehicleModel">Model</label>
+            <input id="vehicleModel" class="form-control" name="model" type="text" value="{{ vehicle.model }}">
 
-        <label class="form-label" for="vehicleNumber">Matrícula</label>
-        <input id="vehicleNumber" class="form-control" name="number" type="text" value="{{ vehicle.number }}">
-        <div class="row">
-            <button class="btn btn-secondary mt-3" type="submit">{{ submitLabel }}</button>
-            <a class="btn cancel"href="{% url 'admin_vehicle_list' %}">Cancelar</a>
-        </div>
-    </form>
-
+            <label class="form-label label1" for="vehicleNumber">Plate number</label>
+            <input id="vehicleNumber" class="form-control" name="number" type="text" value="{{ vehicle.number }}">
+            <div class="row">
+                <button class="btn save" type="submit">{{ submitLabel }}</button>
+                <a class="btn cancel" href="{% url 'admin_vehicle_list' %}">Cancel</a>
+            </div>
+        </form>
+    </div>
 </main>
 {% endblock %}
